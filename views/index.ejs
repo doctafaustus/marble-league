@@ -1,44 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Marble Race</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Marble Racing League</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 </head>
 <body>
 
+	<div class="wrapper">
 
-	<ul id="marbles">
-		<li class="marble-selection">
-			<div class="marble-sprite yellow"></div>
-			<div class="btn">
-				<img class="key-icon" src="images/key-icon.png">
-				<span class="btn-text">Claim</span>
-			</div>
-		</li>
-		<li class="marble-selection">
-			<div class="marble-sprite red"></div>
-			<div class="btn">
-				<img class="key-icon" src="images/key-icon.png">
-				<span class="btn-text">Claim</span>
-			</div>
-		</li>
-		<li class="marble-selection">
-			<div class="marble-sprite blue"></div>
-			<div class="btn">
-				<img class="key-icon" src="images/key-icon.png">
-				<span class="btn-text">Claim</span>
-			</div>
-		</li>
-		<li class="marble-selection">
-			<div class="marble-sprite green"></div>
-			<div class="btn">
-				<img class="key-icon" src="images/key-icon.png">
-				<span class="btn-text">Claim</span>
-			</div>
-		</li>
-	</ul>
+		<div id="nav">
+			<a id="logo" href="/"><img src="images/logo.png"></a>
+			<a id="results-link" href="#">Results</a>
+		</div>
+		
 
+		<h2>Race Results</h2>
+		<img id="video" src="images/video.jpg">
+
+
+		<h2>Marbles Eligible for Next Race</h2>
+		<div id="eligible-desc">
+			Claiming let's you name a marble and you'll be its "owner" for the next race
+		</div>
+
+		<ul id="eligible-marbles">
+			<li class="marble-selection">
+				<div class="marble-sprite yellow"></div>
+				<div class="marble-name">Yellow</div>
+				<div class="btn">
+					<img class="key-icon" src="images/key-icon.png">
+					<span class="btn-text">Claim</span>
+				</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite red"></div>
+				<div class="marble-name">Red</div>
+				<div class="btn">
+					<img class="key-icon" src="images/key-icon.png">
+					<span class="btn-text">Claim</span>
+				</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite blue"></div>
+				<div class="marble-name">Blue</div>
+				<div class="btn">
+					<img class="key-icon" src="images/key-icon.png">
+					<span class="btn-text">Claim</span>
+				</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite green"></div>
+				<div class="marble-name">Green</div>
+				<div class="btn">
+					<img class="key-icon" src="images/key-icon.png">
+					<span class="btn-text">Claim</span>
+				</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite yellow"></div>
+				<div class="marble-name">Yellow</div>
+				<div class="btn">
+					<img class="key-icon" src="images/key-icon.png">
+					<span class="btn-text">Claim</span>
+				</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite red"></div>
+				<div class="marble-name">Red</div>
+				<div class="btn">
+					<img class="key-icon" src="images/key-icon.png">
+					<span class="btn-text">Claim</span>
+				</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite blue"></div>
+				<div class="marble-name">Blue</div>
+				<div class="btn">
+					<img class="key-icon" src="images/key-icon.png">
+					<span class="btn-text">Claim</span>
+				</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite green"></div>
+				<div class="marble-name">Green</div>
+				<div class="btn">
+					<img class="key-icon" src="images/key-icon.png">
+					<span class="btn-text">Claim</span>
+				</div>
+			</li>
+		</ul>
+
+		<h2 id="entered-marbles-title">Entered Marbles</h2>
+		<ul id="entered-marbles">
+			<li class="marble-selection">
+				<div class="marble-sprite yellow"></div>
+				<div class="marble-name">Yellow</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite red"></div>
+				<div class="marble-name">Red</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite blue"></div>
+				<div class="marble-name">Blue</div>
+			</li>
+			<li class="marble-selection">
+				<div class="marble-sprite green"></div>
+				<div class="marble-name">Green</div>
+			</li>
+		</ul>
+
+	</div>
 
 </body>
 </html>

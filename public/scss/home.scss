@@ -1,20 +1,77 @@
 body {
-  border: solid 1px green;
-  height: 1000px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin: 20px 0;
+  font-weight: 500;
 }
 
-#marbles {
-  margin-top: 200px;
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 979px;
+}
+
+#nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  #logo {
+    display: inline-block;
+
+    img {
+      width: 180px;
+    }
+  }
+}
+
+
+
+
+#video {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+#eligible-desc {
+  max-width: 570px;
+  margin: 20px auto;
+  line-height: 20px;
+}
+
+#eligible-marbles, #entered-marbles {
+  max-width: 600px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px #eaeaea;
+  border-radius: 4px;
+  padding: 0 20px;
 
   li.marble-selection {
     text-align: center;
+    margin: 20px 10px;
+
+    .marble-name {
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
 
     .marble-sprite {
       border-radius: 50%;
-      width: 95px;
-      height: 95px;
+      width: 40px;
+      height: 40px;
       animation-name: spin; 
       animation-duration: 3s;
       animation-iteration-count: infinite;
@@ -83,10 +140,12 @@ body {
   }
 }
 
-
-
-
-
+#entered-marbles {
+  background-color: #f3f5f8;
+}
+#entered-marbles-title {
+  margin-top: 40px;
+}
 
 
 

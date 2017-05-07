@@ -1,35 +1,77 @@
 body {
-  border: solid 1px green;
-  height: 1000px; }
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-top: 20px;
+  padding-bottom: 80px; }
 
-#marbles {
-  margin-top: 200px;
+a {
+  color: black; }
+  a:hover {
+    text-decoration: none; }
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin: 20px 0;
+  font-weight: 500; }
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 979px; }
+
+#nav {
   display: flex;
-  justify-content: space-around; }
-  #marbles li.marble-selection {
-    text-align: center; }
-    #marbles li.marble-selection .marble-sprite {
+  justify-content: space-between; }
+  #nav #logo {
+    display: inline-block; }
+    #nav #logo img {
+      width: 180px; }
+
+#video {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 80px; }
+
+#eligible-desc {
+  max-width: 570px;
+  margin: 20px auto;
+  line-height: 20px; }
+
+#eligible-marbles, #entered-marbles {
+  max-width: 600px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px #eaeaea;
+  border-radius: 4px;
+  padding: 0 20px; }
+  #eligible-marbles li.marble-selection, #entered-marbles li.marble-selection {
+    text-align: center;
+    margin: 20px 10px; }
+    #eligible-marbles li.marble-selection .marble-name, #entered-marbles li.marble-selection .marble-name {
+      margin-bottom: 12px;
+      font-weight: bold; }
+    #eligible-marbles li.marble-selection .marble-sprite, #entered-marbles li.marble-selection .marble-sprite {
       border-radius: 50%;
-      width: 95px;
-      height: 95px;
+      width: 40px;
+      height: 40px;
       animation-name: spin;
       animation-duration: 3s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       margin: 0 auto 12px auto; }
-      #marbles li.marble-selection .marble-sprite.yellow {
+      #eligible-marbles li.marble-selection .marble-sprite.yellow, #entered-marbles li.marble-selection .marble-sprite.yellow {
         background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
         background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
         background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%); }
-      #marbles li.marble-selection .marble-sprite.red {
+      #eligible-marbles li.marble-selection .marble-sprite.red, #entered-marbles li.marble-selection .marble-sprite.red {
         background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, orange 100%, #9e0101 95%);
         background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff5757, #9e0101);
         background-image: radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, orange 100%, #9e0101 95%); }
-      #marbles li.marble-selection .marble-sprite.blue {
+      #eligible-marbles li.marble-selection .marble-sprite.blue, #entered-marbles li.marble-selection .marble-sprite.blue {
         background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, blue 0%, #001b56 100%, #050058 95%);
         background-image: -webkit-radial-gradient(45px 45px, circle cover, blue, #050058);
         background-image: radial-gradient(45px 45px 45deg, circle cover, blue 0%, #001b56 100%, #050058 95%); }
-      #marbles li.marble-selection .marble-sprite.green {
+      #eligible-marbles li.marble-selection .marble-sprite.green, #entered-marbles li.marble-selection .marble-sprite.green {
         background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #00b300 0%, #001b56 100%, #214402 95%);
         background-image: -webkit-radial-gradient(45px 45px, circle cover, #00b300, #214402);
         background-image: radial-gradient(45px 45px 45deg, circle cover, #00b300 0%, #001b56 100%, #214402 95%); }
@@ -62,6 +104,12 @@ body {
     padding-right: 2px; }
   .btn .btn-text {
     vertical-align: middle; }
+
+#entered-marbles {
+  background-color: #f3f5f8; }
+
+#entered-marbles-title {
+  margin-top: 40px; }
 
 @keyframes spin {
   from {
