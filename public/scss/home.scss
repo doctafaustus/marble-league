@@ -1,7 +1,6 @@
 body {
   font-family: 'Open Sans Condensed', sans-serif;
   padding-top: 20px;
-  padding-bottom: 80px;
 }
 a {
   color: black;
@@ -85,9 +84,9 @@ h2 {
       }
 
       &.red {
-        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, orange 100%, #9e0101 95%);
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, #B02818 100%, #9e0101 95%);
         background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff5757, #9e0101);
-        background-image: radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, orange 100%, #9e0101 95%);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, #B02818 100%, #9e0101 95%);
       }
 
       &.blue {
@@ -101,6 +100,32 @@ h2 {
         background-image: -webkit-radial-gradient(45px 45px, circle cover, #00b300, #214402);
         background-image: radial-gradient(45px 45px 45deg, circle cover, #00b300 0%, #001b56 100%, #214402 95%);
       }
+
+      &.white {
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ffffff 0%, #A7A7A8 100%, #cacaca 95%);
+        background-image: -webkit-radial-gradient(45px 45px, circle cover, #ffffff, #cacaca);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, #ffffff 0%, #A7A7A8 100%, #cacaca 95%);
+      }
+
+      &.teal {
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, teal 0%, #08A4E1 100%, #00afa7 95%);
+        background-image: -webkit-radial-gradient(45px 45px, circle cover, teal, #00afa7);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, teal 0%, #08A4E1 100%, #00afa7 95%);
+      }
+
+      &.black {
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, black 0%, #3B3C3C 100%, #5b5d5c 95%);
+        background-image: -webkit-radial-gradient(45px 45px, circle cover, black, #5b5d5c);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, black 0%, #3B3C3C 100%, #5b5d5c 95%);
+      }
+
+      &.orange {
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, orange 0%, orange 100%, #ff6c09 95%);
+        background-image: -webkit-radial-gradient(45px 45px, circle cover, orange, #ff6c09);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, orange 0%, orange 100%, #ff6c09 95%);
+      }
+
+
     }
   }
 }
@@ -142,11 +167,27 @@ h2 {
 
 #entered-marbles {
   background-color: #f3f5f8;
+  margin-bottom: 100px;
 }
 #entered-marbles-title {
   margin-top: 40px;
 }
 
+
+footer {
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  background-color: black;
+  font-size: 15px;
+
+  #footer-left {
+    float: left;
+  }
+  #footer-right {
+    float: right;
+  }
+}
 
 
 

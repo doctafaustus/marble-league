@@ -1,7 +1,6 @@
 body {
   font-family: 'Open Sans Condensed', sans-serif;
-  padding-top: 20px;
-  padding-bottom: 80px; }
+  padding-top: 20px; }
 
 a {
   color: black; }
@@ -64,9 +63,9 @@ h2 {
         background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
         background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%); }
       #eligible-marbles li.marble-selection .marble-sprite.red, #entered-marbles li.marble-selection .marble-sprite.red {
-        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, orange 100%, #9e0101 95%);
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, #B02818 100%, #9e0101 95%);
         background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff5757, #9e0101);
-        background-image: radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, orange 100%, #9e0101 95%); }
+        background-image: radial-gradient(45px 45px 45deg, circle cover, #ff5757 0%, #B02818 100%, #9e0101 95%); }
       #eligible-marbles li.marble-selection .marble-sprite.blue, #entered-marbles li.marble-selection .marble-sprite.blue {
         background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, blue 0%, #001b56 100%, #050058 95%);
         background-image: -webkit-radial-gradient(45px 45px, circle cover, blue, #050058);
@@ -75,6 +74,22 @@ h2 {
         background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #00b300 0%, #001b56 100%, #214402 95%);
         background-image: -webkit-radial-gradient(45px 45px, circle cover, #00b300, #214402);
         background-image: radial-gradient(45px 45px 45deg, circle cover, #00b300 0%, #001b56 100%, #214402 95%); }
+      #eligible-marbles li.marble-selection .marble-sprite.white, #entered-marbles li.marble-selection .marble-sprite.white {
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ffffff 0%, #A7A7A8 100%, #cacaca 95%);
+        background-image: -webkit-radial-gradient(45px 45px, circle cover, #ffffff, #cacaca);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, #ffffff 0%, #A7A7A8 100%, #cacaca 95%); }
+      #eligible-marbles li.marble-selection .marble-sprite.teal, #entered-marbles li.marble-selection .marble-sprite.teal {
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, teal 0%, #08A4E1 100%, #00afa7 95%);
+        background-image: -webkit-radial-gradient(45px 45px, circle cover, teal, #00afa7);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, teal 0%, #08A4E1 100%, #00afa7 95%); }
+      #eligible-marbles li.marble-selection .marble-sprite.black, #entered-marbles li.marble-selection .marble-sprite.black {
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, black 0%, #3B3C3C 100%, #5b5d5c 95%);
+        background-image: -webkit-radial-gradient(45px 45px, circle cover, black, #5b5d5c);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, black 0%, #3B3C3C 100%, #5b5d5c 95%); }
+      #eligible-marbles li.marble-selection .marble-sprite.orange, #entered-marbles li.marble-selection .marble-sprite.orange {
+        background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, orange 0%, orange 100%, #ff6c09 95%);
+        background-image: -webkit-radial-gradient(45px 45px, circle cover, orange, #ff6c09);
+        background-image: radial-gradient(45px 45px 45deg, circle cover, orange 0%, orange 100%, #ff6c09 95%); }
 
 .btn {
   background-color: #f5f8fa;
@@ -106,10 +121,22 @@ h2 {
     vertical-align: middle; }
 
 #entered-marbles {
-  background-color: #f3f5f8; }
+  background-color: #f3f5f8;
+  margin-bottom: 100px; }
 
 #entered-marbles-title {
   margin-top: 40px; }
+
+footer {
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  background-color: black;
+  font-size: 15px; }
+  footer #footer-left {
+    float: left; }
+  footer #footer-right {
+    float: right; }
 
 @keyframes spin {
   from {
