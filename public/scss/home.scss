@@ -19,6 +19,7 @@ h2 {
 .wrapper {
   margin: 0 auto;
   max-width: 979px;
+  padding: 0 25px;
 }
 
 #nav {
@@ -36,12 +37,17 @@ h2 {
 
 
 
-
-#video {
-  display: block;
+#video-section {
+  max-width: 750px;
   margin: 0 auto;
-  margin-bottom: 80px;
+
+  #video {
+    display: block;
+    margin-bottom: 80px;
+    width: 100%;
+  }
 }
+
 
 #eligible-desc {
   max-width: 570px;
@@ -64,7 +70,6 @@ h2 {
 
     .marble-name {
       margin-bottom: 12px;
-      font-weight: bold;
     }
 
     .marble-sprite {
@@ -170,7 +175,7 @@ h2 {
   margin-bottom: 100px;
 }
 #entered-marbles-title {
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 
@@ -189,6 +194,40 @@ footer {
   }
 }
 
+
+#modal {
+  display: none;
+
+  #modal-box {
+    position: fixed;
+    width: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 35px;
+    z-index: 6;
+    background-color: white;
+    border-radius: 3px 3px 3px 3px;
+    border: 1px solid #B9BCC0;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+    max-height: calc(100vh - 203px);
+    overflow-y: auto;
+  }
+
+  #modal-overlay {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+}
 
 
 
