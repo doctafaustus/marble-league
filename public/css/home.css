@@ -146,6 +146,7 @@ footer {
   #modal #modal-box {
     position: fixed;
     width: 80%;
+    max-width: 750px;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
@@ -160,6 +161,24 @@ footer {
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
     max-height: calc(100vh - 203px);
     overflow-y: auto; }
+    #modal #modal-box #name-your-marble {
+      font-size: 25px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 40px; }
+    #modal #modal-box #info-form label {
+      display: block;
+      margin: 0 auto 8px auto;
+      width: 50%;
+      min-width: 300px;
+      font-size: 20px; }
+    #modal #modal-box #info-form #marble-name {
+      display: block;
+      margin: 0 auto;
+      width: 50%;
+      min-width: 300px;
+      height: 36px;
+      font-size: 21px; }
   #modal #modal-overlay {
     position: fixed;
     z-index: 5;
