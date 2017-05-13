@@ -30,70 +30,16 @@
 		</div>
 
 		<ul id="eligible-marbles">
-			<li class="marble-selection">
-				<div class="marble-sprite yellow"></div>
-				<div class="marble-name">Yellow</div>
-				<div class="btn">
-					<img class="key-icon" src="images/key-icon.png">
-					<span class="btn-text">$5 Enter</span>
-				</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite red"></div>
-				<div class="marble-name">Red</div>
-				<div class="btn">
-					<img class="key-icon" src="images/key-icon.png">
-					<span class="btn-text">$5 Enter</span>
-				</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite blue"></div>
-				<div class="marble-name">Blue</div>
-				<div class="btn">
-					<img class="key-icon" src="images/key-icon.png">
-					<span class="btn-text">$5 Enter</span>
-				</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite green"></div>
-				<div class="marble-name">Green</div>
-				<div class="btn">
-					<img class="key-icon" src="images/key-icon.png">
-					<span class="btn-text">$5 Enter</span>
-				</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite white"></div>
-				<div class="marble-name">White</div>
-				<div class="btn">
-					<img class="key-icon" src="images/key-icon.png">
-					<span class="btn-text">$5 Enter</span>
-				</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite teal"></div>
-				<div class="marble-name">Teal</div>
-				<div class="btn">
-					<img class="key-icon" src="images/key-icon.png">
-					<span class="btn-text">$5 Enter</span>
-				</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite black"></div>
-				<div class="marble-name">Black</div>
-				<div class="btn">
-					<img class="key-icon" src="images/key-icon.png">
-					<span class="btn-text">$5 Enter</span>
-				</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite orange"></div>
-				<div class="marble-name">Orange</div>
-				<div class="btn">
-					<img class="key-icon" src="images/key-icon.png">
-					<span class="btn-text">$5 Enter</span>
-				</div>
-			</li>
+			<% for (var i = 0; i < availableMarbles.length; i++) { %>
+				<li class="marble-selection">
+					<div class="marble-sprite yellow"></div>
+					<div class="marble-name"><%= availableMarbles[i].color %></div>
+					<div class="btn">
+						<img class="key-icon" src="images/key-icon.png">
+						<span class="btn-text">$5 Enter</span>
+					</div>
+				</li>
+			<% } %>
 		</ul>
 
 		<h2 id="entered-marbles-title">Entered Marbles</h2>
@@ -126,13 +72,13 @@
 
 	<div id="modal">
 		<div id="modal-box">
-			<h3 id="name-your-marble">Name Your Marble</h3>
+			<h3 id="name-your-marble">Name This Marble</h3>
 			<div id="info-form">
-				<label>Marble Name</label>
+				<label>Name:</label>
 				<input type="text" id="marble-name">
 
 				<div id="submit-marble-info" class="btn">
-					<span class="btn-text">Enter</span>
+					<span class="btn-text">Enter Marble</span>
 				</div>
 			</div>
 		</div>
