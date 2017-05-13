@@ -201,7 +201,7 @@ footer {
   #modal-box {
     position: fixed;
     width: 80%;
-    max-width: 750px;
+    max-width: 679px;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
@@ -235,6 +235,8 @@ footer {
       }
 
       #marble-name {
+        box-sizing: border-box;
+        padding-left: 8px;
         display: block;
         margin: 0 auto;
         width: 50%;
@@ -245,6 +247,7 @@ footer {
 
       #submit-marble-info {
         margin: 15px auto 15px auto;
+        min-width: 300px;
         width: 50%;
         text-align: center;
         display: block;

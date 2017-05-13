@@ -2,10 +2,7 @@
 const express = require('express');
 
 // STRIPE
-const stripeSK = 'test';
-
-// process.env.PORT ? process.env.STRIPE_LIVE_SK : fs.readFileSync('./private/stripeTestSecretKey.txt').toString();
-// ///* HEROKU DEBUG */ stripeSK = process.env.HEROKU_DEBUG_STRIPE_LIVE_SK;
+const stripeSK = process.env.PORT ? process.env.STRIPE_LIVE_SK : process.env.STRIPE_TEST_SK;
 const stripe = require('stripe')(stripeSK);
 
 // DATABASE
