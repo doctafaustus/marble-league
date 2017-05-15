@@ -33,8 +33,10 @@
 			<% for (var i = 0; i < availableMarbles.length; i++) { %>
 				<li class="marble-selection">
 					<div class="marble-sprite yellow"></div>
-					<div class="marble-name"><%= availableMarbles[i].color %></div>
-					<div class="btn">
+					<div class="marble-name">
+						<%= availableMarbles[i].color %>
+					</div>
+					<div class="btn" data-color="<%= availableMarbles[i].color %>">
 						<img class="key-icon" src="images/key-icon.png">
 						<span class="btn-text">$5 Enter</span>
 					</div>
@@ -89,47 +91,50 @@
 	<script src='https://checkout.stripe.com/checkout.js'></script>
 	<script>
 		// Save marble name
-		var mableName;
+		var marbleColor;
 
 		// Show/Hide marble name modal
 		$('.marble-selection .btn').click(function() {
 			$('#modal').show();
+			marbleColor = $(this).attr('data-color');
 		});
 		$('#modal-overlay').click(function() {
 			$('#modal').hide();
 		});
 
-		// Declare Stripe handler
-		var handler = StripeCheckout.configure({
-			key: 'pk_test_NtoFpH2Dn1BjVO3hhCN9TIIF',
-			//key: 'pk_live_1sUhCVcBV6XHcJUHognanYwq',
-			image: 'images/stripe-logo.png',
-			locale: 'auto',
-			token: function(token) {
-				$.ajax({
-					url: '/charge',
-					type: 'POST',
-					data: {
-						stripeToken: token.id,
-						stripeEmail: token.email,
-					},
-					success: function() {
-						console.log('Success!');
-					},
-					error: function(jqXHR) {
-						console.warn(jqXHR);
-					},
-				});
-			}
-		});
-
 		$('#submit-marble-info').click(function(e) {
 			e.preventDefault();
-			marbleName = $('#marble-name').val().trim();
+			userGivenName = $('#marble-name').val().trim();
+
+			// Declare Stripe handler
+			var handler = StripeCheckout.configure({
+				key: 'pk_test_NtoFpH2Dn1BjVO3hhCN9TIIF',
+				//key: 'pk_live_1sUhCVcBV6XHcJUHognanYwq',
+				image: 'images/stripe-logo.png',
+				locale: 'auto',
+				token: function(token) {
+					$.ajax({
+						url: '/charge',
+						type: 'POST',
+						data: {
+							stripeToken: token.id,
+							stripeEmail: token.email,
+							marbleColor: marbleColor,
+							userGivenName: userGivenName,
+						},
+						success: function() {
+							console.log('Success!');
+						},
+						error: function(jqXHR) {
+							console.warn(jqXHR);
+						},
+					});
+				}
+			});
 
 			handler.open({
 				name: 'Marble Racing League',
-				description: 'Marble ownership: ' + marbleName,
+				description: 'Marble ownership: ' + userGivenName,
 				amount: 500,
 				allowRememberMe: false,
 			});
