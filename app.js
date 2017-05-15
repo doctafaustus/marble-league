@@ -4,10 +4,9 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 // STRIPE
-const stripeSK = process.env.PORT ? process.env.STRIPE_LIVE_SK : process.env.STRIPE_TEST_SK;
+const stripeSK = process.env.PORT ? process.env.STRIPE_LIVE_SK : fs.readFileSync('./private/stripe_test_sk.txt').toString();;
 const stripe = require('stripe')(stripeSK);
 
-console.log(process.env);
 
 // DATABASE
 const mongoose = require('mongoose');
@@ -27,6 +26,7 @@ if (!process.env.PORT) {
 	mongoose.connect(mongooseUri, dbOptions);
 }
 
+// Schema
 const Marble = mongoose.model('Marble', new Schema({
 	id: ObjectId,
 	color: String,
@@ -52,14 +52,23 @@ app.get('/', function(req, res) {
   		return marble.userGivenName;
   	});
 
-  	res.render('index.ejs', { availableMarbles: availableMarbles });
+  	const data = {
+  		availableMarbles: availableMarbles,
+  		fromStripeCharge: false,
+  	};
+
+  	// Stripe charge success
+  	if (req.query.success) {
+  		data.fromStripeCharge = true;
+  	}
+
+  	res.render('index.ejs', { availableMarbles: data.availableMarbles, fromStripeCharge: data.fromStripeCharge });
   });
 });
 
 // Stripe charge
 app.post('/charge', function(req, res) {
 	console.log('/charge');
-	console.log(req.body);
 
   stripe.customers.create({
 	  description: 'Customer: ' + req.body.stripeEmail,
@@ -67,7 +76,6 @@ app.post('/charge', function(req, res) {
 	  email: req.body.stripeEmail,
 	}, function(err, customer) {
 		if (err) console.log(err);
-		console.log(customer);
 		stripe.charges.create({
 		  amount: 500,
 		  currency: 'usd',
@@ -75,8 +83,9 @@ app.post('/charge', function(req, res) {
 		  description: 'Charge for ' + req.body.stripeEmail,
 		}, function(err, charge) {
 			if (err) console.log(err);
-			Marble.find({ color: req.body.marbleColor }).exec(function (err, marble) {
+			Marble.findOne({ color: req.body.marbleColor }).exec(function (err, marble) {
 		  	if (err) console.log(err);
+		  	console.log(marble);
 		  	marble.userGivenName = req.body.userGivenName;
 				marble.save(function(err) {
           if (err) console.log(err);
@@ -87,8 +96,6 @@ app.post('/charge', function(req, res) {
 	  });
 	});
 });
-
-
 
 
 app.listen(process.env.PORT || 3000, function() {

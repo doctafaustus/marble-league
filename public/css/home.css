@@ -26,6 +26,17 @@ h2 {
     #nav #logo img {
       width: 180px; }
 
+#success-message {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 7px;
+  border: solid 1px #089de3;
+  color: #089de3;
+  line-height: 20px;
+  box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 5px 0px;
+  background-color: rgba(240, 240, 240, 0.48); }
+
 #video-section {
   max-width: 750px;
   margin: 0 auto; }

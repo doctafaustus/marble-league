@@ -18,6 +18,12 @@
 		</div>
 		
 
+		<% if (locals.fromStripeCharge) { %>
+			<div id="success-message">Marble successfully named!</div>
+		<% } %>
+
+
+
 		<div id="video-section">
 			<h2>Race Results</h2>
 			<img id="video" src="images/video.jpg">
@@ -26,7 +32,7 @@
 
 		<h2>Marbles Eligible for Next Race</h2>
 		<div id="eligible-desc">
-			Entering let's you name a marble and you'll be its "owner" for the next race.
+			Entering let's you name a marble and you'll be its owner for the next race.
 		</div>
 
 		<ul id="eligible-marbles">
@@ -124,6 +130,7 @@
 						},
 						success: function() {
 							console.log('Success!');
+							window.location.href = '/?success=true';
 						},
 						error: function(jqXHR) {
 							console.warn(jqXHR);
