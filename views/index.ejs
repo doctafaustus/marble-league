@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Marble Racing League</title>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/universal.css">
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
 
 		<div id="nav">
 			<a id="logo" href="/"><img src="images/logo.png"></a>
-			<a id="results-link" href="#">Results</a>
+			<a id="results-link" href="/results">Results</a>
 		</div>
 		
 
@@ -35,45 +35,47 @@
 			Entering let's you name a marble and you'll be its owner for the next race.
 		</div>
 
-		<ul id="eligible-marbles">
-			<% for (var i = 0; i < availableMarbles.length; i++) { %>
-				<li class="marble-selection">
-					<div class="marble-sprite yellow"></div>
-					<div class="marble-name">
-						<%= availableMarbles[i].color %>
-					</div>
-					<div class="btn" data-color="<%= availableMarbles[i].color %>">
-						<img class="key-icon" src="images/key-icon.png">
-						<span class="btn-text">$5 Enter</span>
-					</div>
-				</li>
-			<% } %>
-		</ul>
 
-		<h2 id="entered-marbles-title">Entered Marbles</h2>
-		<ul id="entered-marbles">
-			<li class="marble-selection">
-				<div class="marble-sprite yellow"></div>
-				<div class="marble-name">Yellow</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite red"></div>
-				<div class="marble-name">Red</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite blue"></div>
-				<div class="marble-name">Blue</div>
-			</li>
-			<li class="marble-selection">
-				<div class="marble-sprite green"></div>
-				<div class="marble-name">Green</div>
-			</li>
-		</ul>
+		<% if (availableMarbles.length) { %>
+			<ul id="eligible-marbles">
+				<% for (var i = 0; i < availableMarbles.length; i++) { %>
+					<li class="marble-selection">
+						<div class="marble-image">
+							<img src='/images/marbles/<%= availableMarbles[i].src %>'>
+						</div>
+
+						<div class="btn" data-color="<%= availableMarbles[i].color %>">
+							<img class="key-icon" src="images/key-icon.png">
+							<span class="btn-text">$5 Enter</span>
+						</div>
+						<div class="marble-name">
+							<%= availableMarbles[i].color %>
+						</div>
+					</li>
+				<% } %>
+			</ul>
+		<% } else { %>
+			<div id="no-available-marbles">All marbles entered!</div>
+		<% } %>
+
+		<% if (ownedMarbles.length) { %>
+			<h2 id="entered-marbles-title">Entered Marbles</h2>
+			<ul id="entered-marbles">
+				<% for (var i = 0; i < ownedMarbles.length; i++) { %>
+				<li class="marble-selection">
+					<div class="marble-image">
+						<img src='/images/marbles/<%= ownedMarbles[i].src %>'>
+					</div>
+					<div class="marble-name"><%= ownedMarbles[i].userGivenName %></div>
+				</li>
+				<% } %>
+			</ul>
+		<% } %>
 	</div>
 
 	<footer>
 		<div class="wrapper">
-			<div id="footer-left">Contact Us</div>
+			<a id="footer-left" href="mailto:contact@marbleracingleague.com">Contact Us</a>
 			<div id="footer-right">&copy; 2017 Marble Racing League</div>
 		</div>
 	</footer>
@@ -93,7 +95,7 @@
 		<div id="modal-overlay"></div>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
 	<script src='https://checkout.stripe.com/checkout.js'></script>
 	<script>
 		// Save marble name
@@ -106,6 +108,7 @@
 		});
 		$('#modal-overlay').click(function() {
 			$('#modal').hide();
+			$('#marble-name').val('');
 		});
 
 		$('#submit-marble-info').click(function(e) {

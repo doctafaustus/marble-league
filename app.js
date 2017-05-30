@@ -31,6 +31,7 @@ const Marble = mongoose.model('Marble', new Schema({
 	id: ObjectId,
 	color: String,
 	userGivenName: String,
+	src: String,
 }));
 
 
@@ -62,8 +63,14 @@ app.get('/', function(req, res) {
   		data.fromStripeCharge = true;
   	}
 
-  	res.render('index.ejs', { availableMarbles: data.availableMarbles, fromStripeCharge: data.fromStripeCharge });
+  	res.render('index.ejs', { availableMarbles: data.availableMarbles, ownedMarbles: ownedMarbles, fromStripeCharge: data.fromStripeCharge });
   });
+});
+
+// Results page
+app.get('/results', function(req, res) {
+  console.log('/results');
+  res.render('results.ejs');
 });
 
 // Stripe charge

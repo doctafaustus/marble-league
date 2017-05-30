@@ -1,0 +1,36 @@
+table {
+	border: solid 1px #dadada;
+	border-radius: 4px;
+	width: 100%;
+	margin-top: 50px;
+
+	thead {
+		tr th {
+			background-color: #27ae60;
+			color: white;
+			font-weight: bold;
+			padding: 10px;
+			text-align: left;
+		}
+	}
+
+	tbody {
+		tr {
+			&:nth-child(even) {
+				background-color: #e8e8e8;
+			}
+
+			td {
+				padding: 10px;
+			}
+		}
+	}
+
+
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
